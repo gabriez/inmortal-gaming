@@ -40,7 +40,7 @@ export default function NodeBackground() {
 
     function initNodes() {
       nodes = Array.from({ length: NODE_COUNT }, () => ({
-        x: Math.random() * (canvas?.width ?? 0)
+        x: Math.random() * (canvas?.width ?? 0),
         y: Math.random() * (canvas?.height ?? 0),
         vx: (Math.random() - 0.5) * SPEED,
         vy: (Math.random() - 0.5) * SPEED,
