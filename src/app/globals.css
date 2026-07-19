@@ -56,30 +56,12 @@ body {
   font-family: var(--font-body);
 }
 
-/* ─── Scanline overlay ─── */
-.scanlines::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 3px,
-    rgba(255, 255, 255, 0.02) 3px,
-    rgba(255, 255, 255, 0.02) 4px
-  );
-  pointer-events: none;
-  z-index: 100;
-}
-
-/* ─── Glitch text ─── */
+/* ─── Glitch text (sutil, 100ms cada 4s) ─── */
 .glitch {
   position: relative;
   color: var(--neon-primary);
-  text-shadow:
-    0 0 7px var(--neon-primary),
-    0 0 21px var(--neon-primary),
-    0 0 42px var(--neon-glow-strong);
+  text-shadow: 0 0 4px var(--neon-primary);
+  transition: text-shadow 0.3s ease;
 }
 
 .glitch::before,
@@ -95,27 +77,88 @@ body {
 .glitch::before {
   color: var(--neon-pink);
   z-index: -1;
-  animation: glitch-offset 4s infinite linear alternate-reverse;
+  /*animation: glitch-offset 3s linear alternate-reverse;
+    animation-iteration-count: infinite;*/
 }
 
 .glitch::after {
   color: var(--neon-primary);
   z-index: -2;
-  animation: glitch-offset 4s infinite linear alternate-reverse;
-  animation-delay: 0.1s;
+  /*animation: glitch-offset 3s linear alternate-reverse;
+    animation-iteration-count: infinite;*/
+}
+
+.glitch:hover {
+  text-shadow:
+    0 0 2px var(--neon-primary),
+    0 0 14px var(--neon-primary);
+  /*animation: glitch-offset 3s linear alternate-reverse;*/
+}
+
+.glitch:hover::before,
+.glitch:hover::after {
+  animation: glitch-offset 2s linear alternate-reverse;
+  animation-iteration-count: infinite;
 }
 
 @keyframes glitch-offset {
   0%,
+  10% {
+    transform: translate(0);
+  }
+  1% {
+    transform: translate(-21px, 5px);
+  }
+  2% {
+    transform: translate(21px, -5px);
+  }
+  3% {
+    transform: translate(-1px, 2px);
+  }
+  4% {
+    transform: translate(0);
+  }
+  20%,
+  30% {
+    transform: translate(0);
+  }
+  21% {
+    transform: translate(-21px, 5px);
+  }
+  22% {
+    transform: translate(21px, -5px);
+  }
+  23% {
+    transform: translate(-1px, 2px);
+  }
+  24% {
+    transform: translate(0);
+  }
+  50%,
+  60% {
+    transform: translate(0);
+  }
+  51% {
+    transform: translate(-21px, 5px);
+  }
+  52% {
+    transform: translate(21px, -5px);
+  }
+  53% {
+    transform: translate(-1px, 2px);
+  }
+  54% {
+    transform: translate(0);
+  }
   90%,
   100% {
     transform: translate(0);
   }
   91% {
-    transform: translate(-2px, 1px);
+    transform: translate(-21px, 5px);
   }
   92% {
-    transform: translate(2px, -1px);
+    transform: translate(21px, -5px);
   }
   93% {
     transform: translate(-1px, 2px);
@@ -143,18 +186,38 @@ body {
   }
 }
 
-.waveform-bar:nth-child(1) { animation-delay: 0s; }
-.waveform-bar:nth-child(2) { animation-delay: 0.15s; }
-.waveform-bar:nth-child(3) { animation-delay: 0.3s; }
-.waveform-bar:nth-child(4) { animation-delay: 0.1s; }
-.waveform-bar:nth-child(5) { animation-delay: 0.45s; }
-.waveform-bar:nth-child(6) { animation-delay: 0.2s; }
-.waveform-bar:nth-child(7) { animation-delay: 0.35s; }
-.waveform-bar:nth-child(8) { animation-delay: 0.05s; }
+.waveform-bar:nth-child(1) {
+  animation-delay: 0s;
+}
+.waveform-bar:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.waveform-bar:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.waveform-bar:nth-child(4) {
+  animation-delay: 0.1s;
+}
+.waveform-bar:nth-child(5) {
+  animation-delay: 0.45s;
+}
+.waveform-bar:nth-child(6) {
+  animation-delay: 0.2s;
+}
+.waveform-bar:nth-child(7) {
+  animation-delay: 0.35s;
+}
+.waveform-bar:nth-child(8) {
+  animation-delay: 0.05s;
+}
 
 /* ─── Particle grid background ─── */
 .particle-grid {
-  background-image: radial-gradient(circle, var(--neon-primary) 1px, transparent 1px);
+  background-image: radial-gradient(
+    circle,
+    var(--neon-primary) 1px,
+    transparent 1px
+  );
   background-size: 40px 40px;
   opacity: 0.05;
 }
@@ -209,6 +272,11 @@ body {
 
 /* ─── Glow text utility ─── */
 .text-glow {
+  text-shadow: 0 0 4px var(--neon-primary);
+  transition: text-shadow 0.3s ease;
+}
+
+.text-glow:hover {
   text-shadow:
     0 0 7px var(--neon-primary),
     0 0 21px var(--neon-primary);
@@ -219,6 +287,12 @@ body {
   .glitch::before,
   .glitch::after {
     animation: none;
+  }
+  .glitch:hover {
+    text-shadow: 0 0 4px var(--neon-primary);
+  }
+  .text-glow:hover {
+    text-shadow: 0 0 4px var(--neon-primary);
   }
   .waveform-bar {
     animation: none;

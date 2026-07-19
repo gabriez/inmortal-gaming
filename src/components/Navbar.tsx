@@ -1,12 +1,14 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useState } from 'react';
-import type { NavLink } from '@/types';
+import Link from "next/link";
+import { useState } from "react";
+
+import { CartIcon, CloseIcon, MenuIcon } from "@/components/icons";
+import type { NavLink } from "@/types";
 
 const NAV_LINKS: NavLink[] = [
-  { label: 'Catálogo', href: '#catalogo' },
-  { label: 'Ofertas', href: '#ofertas' },
+  { label: "Catálogo", href: "#catalogo" },
+  { label: "Ofertas", href: "#ofertas" },
 ];
 
 export default function Navbar() {
@@ -19,9 +21,9 @@ export default function Navbar() {
         <Link
           href="/"
           className="glitch text-2xl font-display font-bold tracking-tight"
-          data-text="INMORTAL"
+          data-text="INMORTAL GAMING"
         >
-          INMORTAL
+          INMORTAL GAMING
         </Link>
 
         {/* Desktop nav links */}
@@ -43,20 +45,9 @@ export default function Navbar() {
           <button
             className="relative p-2 text-text-secondary transition-colors hover:text-neon-primary"
             aria-label="Carrito"
+            type="button"
           >
-            <svg
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={1.5}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-              />
-            </svg>
+            <CartIcon className="h-5 w-5" />
             <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-neon-primary text-[10px] font-bold text-black">
               3
             </span>
@@ -74,29 +65,14 @@ export default function Navbar() {
           <button
             className="p-2 text-text-secondary transition-colors hover:text-neon-primary md:hidden"
             aria-label="Menú"
+            type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
-            <svg
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={1.5}
-            >
-              {mobileOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
-              )}
-            </svg>
+            {mobileOpen ? (
+              <CloseIcon className="h-5 w-5" />
+            ) : (
+              <MenuIcon className="h-5 w-5" />
+            )}
           </button>
         </div>
       </div>

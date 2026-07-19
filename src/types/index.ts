@@ -1,12 +1,12 @@
 /* ─── Inmortal Gaming — Shared Types ─── */
 
 export type ProductCategory =
-  | 'game-items'
-  | 'virtual-currency'
-  | 'gift-cards'
-  | 'digital-services';
+  | "game-items"
+  | "virtual-currency"
+  | "gift-cards"
+  | "digital-services";
 
-export type StockStatus = 'available' | 'low' | 'out-of-stock';
+export type StockStatus = "available" | "low" | "out-of-stock";
 
 export interface Product {
   id: string;

@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
 interface Node {
   x: number;
@@ -22,14 +22,14 @@ export default function NodeBackground() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     let animationId: number;
     let nodes: Node[] = [];
 
     const prefersReduced = window.matchMedia(
-      '(prefers-reduced-motion: reduce)'
+      "(prefers-reduced-motion: reduce)",
     ).matches;
 
     function resize() {
@@ -40,8 +40,8 @@ export default function NodeBackground() {
 
     function initNodes() {
       nodes = Array.from({ length: NODE_COUNT }, () => ({
-        x: Math.random() * canvas!.width,
-        y: Math.random() * canvas!.height,
+        x: Math.random() * (canvas?.width ?? 0)
+        y: Math.random() * (canvas?.height ?? 0),
         vx: (Math.random() - 0.5) * SPEED,
         vy: (Math.random() - 0.5) * SPEED,
         radius: Math.random() * 2 + 1.5,
@@ -103,11 +103,11 @@ export default function NodeBackground() {
       initNodes();
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       cancelAnimationFrame(animationId);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -116,7 +116,6 @@ export default function NodeBackground() {
       ref={canvasRef}
       className="fixed inset-0 h-full w-full pointer-events-none"
       style={{ zIndex: 0 }}
-      aria-hidden="true"
     />
   );
 }

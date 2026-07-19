@@ -1,6 +1,7 @@
-'use client';
+"use client";
 
-import NodeBackground from './NodeBackground';
+import { ChevronDownIcon } from "@/components/icons";
+import NodeBackground from "./NodeBackground";
 
 /* Deterministic heights to avoid hydration mismatch */
 const WAVEFORM_HEIGHTS = [32, 48, 24, 64, 40, 56, 28, 44];
@@ -20,14 +21,17 @@ export default function HeroSection() {
 
         {/* Headline */}
         <h1 className="mb-6 font-display font-bold text-glow text-balance">
-          <span className="text-4xl leading-[1.1] text-text-primary md:text-5xl lg:text-7xl">
-            Bienes Digitales para{' '}
-          </span>
+          {/*<span
+            className="glitch text-4xl leading-[1.1] md:text-5xl lg:text-7xl"
+            data-text="Bienes Digitales para"
+          >
+
+          </span>*/}
           <span
             className="glitch mt-2 block text-4xl leading-[1.1] md:text-5xl lg:text-7xl"
-            data-text="Gamers"
+            data-text="Bienes Digitales para Gamers"
           >
-            Gamers
+            Bienes Digitales para Gamers
           </span>
         </h1>
 
@@ -38,10 +42,10 @@ export default function HeroSection() {
         </p>
 
         {/* Waveform equalizer */}
-        <div className="mb-10 flex h-16 items-end justify-center gap-[3px]">
+        <div className="mb-10 flex h-16 items-end justify-center gap-0.75">
           {WAVEFORM_HEIGHTS.map((height, i) => (
             <div
-              key={i}
+              key={`${i}-${height}`}
               className="waveform-bar"
               style={{ height: `${height}px` }}
             />
@@ -67,19 +71,7 @@ export default function HeroSection() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 animate-bounce">
-        <svg
-          className="h-6 w-6 text-neon-primary opacity-50"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={1.5}
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-          />
-        </svg>
+        <ChevronDownIcon className="h-6 w-6 text-neon-primary opacity-50" />
       </div>
     </section>
   );
