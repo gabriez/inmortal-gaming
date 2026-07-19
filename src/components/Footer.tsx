@@ -1,5 +1,6 @@
-import Link from 'next/link';
-import { WhatsAppIcon } from '@/components/icons';
+import Link from "next/link";
+
+import { WhatsAppIcon } from "@/components/icons";
 
 export default function Footer() {
   return (
@@ -12,7 +13,8 @@ export default function Footer() {
               ¿Listo para tu próxima compra?
             </p>
             <p className="font-body text-sm text-text-secondary">
-              Contáctanos por WhatsApp y recibe atención personalizada al instante
+              Contáctanos por WhatsApp y recibe atención personalizada al
+              instante
             </p>
           </div>
           <Link
@@ -30,7 +32,10 @@ export default function Footer() {
         <div className="mb-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <span className="glitch inline-block text-lg font-display font-bold tracking-tight" data-text="INMORTAL">
+            <span
+              className="glitch inline-block text-lg font-display font-bold tracking-tight"
+              data-text="INMORTAL"
+            >
               INMORTAL
             </span>
             <p className="mt-3 font-body text-xs leading-relaxed text-text-muted">
@@ -45,18 +50,21 @@ export default function Footer() {
               Productos
             </h4>
             <ul className="space-y-2">
-              {['Items de Juego', 'Moneda Virtual', 'Gift Cards', 'Servicios'].map(
-                (label) => (
-                  <li key={label}>
-                    <a
-                      href="#"
-                      className="font-body text-xs text-text-muted transition-colors hover:text-neon-primary"
-                    >
-                      {label}
-                    </a>
-                  </li>
-                ),
-              )}
+              {[
+                "Items de Juego",
+                "Moneda Virtual",
+                "Gift Cards",
+                "Servicios",
+              ].map((label) => (
+                <li key={label}>
+                  <a
+                    href="#category"
+                    className="font-body text-xs text-text-muted transition-colors hover:text-neon-primary"
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -65,10 +73,10 @@ export default function Footer() {
               Soporte
             </h4>
             <ul className="space-y-2">
-              {['WhatsApp', 'FAQ', 'Términos', 'Privacidad'].map((label) => (
+              {["WhatsApp", "FAQ", "Términos", "Privacidad"].map((label) => (
                 <li key={label}>
                   <a
-                    href="#"
+                    href="#item"
                     className="font-body text-xs text-text-muted transition-colors hover:text-neon-primary"
                   >
                     {label}
@@ -83,10 +91,10 @@ export default function Footer() {
               Comunidad
             </h4>
             <ul className="space-y-2">
-              {['Discord', 'Instagram', 'Twitter', 'TikTok'].map((label) => (
+              {["Discord", "Instagram", "Twitter", "TikTok"].map((label) => (
                 <li key={label}>
                   <a
-                    href="#"
+                    href="#network"
                     className="font-body text-xs text-text-muted transition-colors hover:text-neon-primary"
                   >
                     {label}
@@ -100,7 +108,8 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-border-subtle pt-6 text-center">
           <p className="font-body text-[11px] text-text-muted">
-            &copy; {new Date().getFullYear()} Inmortal Gaming. Todos los derechos reservados.
+            &copy; {new Date().getFullYear()} Inmortal Gaming. Todos los
+            derechos reservados.
           </p>
         </div>
       </div>

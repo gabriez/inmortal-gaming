@@ -1,30 +1,31 @@
-import Image from 'next/image';
-import type { Product, ProductCategory } from '@/types';
+import Image from "next/image";
+
+import type { Product, ProductCategory } from "@/types";
 
 const CATEGORY_COLORS: Record<ProductCategory, string> = {
-  'game-items': 'bg-neon-primary text-black',
-  'virtual-currency': 'bg-neon-purple text-white',
-  'gift-cards': 'bg-neon-green text-black',
-  'digital-services': 'bg-neon-amber text-black',
+  "game-items": "bg-neon-primary text-black",
+  "virtual-currency": "bg-neon-purple text-white",
+  "gift-cards": "bg-neon-green text-black",
+  "digital-services": "bg-neon-amber text-black",
 };
 
 const CATEGORY_LABELS: Record<ProductCategory, string> = {
-  'game-items': 'Items',
-  'virtual-currency': 'Moneda',
-  'gift-cards': 'Gift Card',
-  'digital-services': 'Servicio',
+  "game-items": "Items",
+  "virtual-currency": "Moneda",
+  "gift-cards": "Gift Card",
+  "digital-services": "Servicio",
 };
 
 const STOCK_COLORS: Record<string, string> = {
-  available: 'text-neon-green',
-  low: 'text-neon-amber',
-  'out-of-stock': 'text-text-muted',
+  available: "text-neon-green",
+  low: "text-neon-amber",
+  "out-of-stock": "text-text-muted",
 };
 
 const STOCK_LABELS: Record<string, string> = {
-  available: 'Disponible',
-  low: 'Últimas unidades',
-  'out-of-stock': 'Agotado',
+  available: "Disponible",
+  low: "Últimas unidades",
+  "out-of-stock": "Agotado",
 };
 
 interface ProductCardProps {
@@ -35,12 +36,14 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <article className="neon-card flex flex-col overflow-hidden">
       {/* Image */}
+      {/* TODO: delete unoptimized property */}
       {product.image && (
         <div className="relative aspect-[8/5] w-full overflow-hidden bg-bg-surface">
           <Image
             src={product.image}
             alt={product.name}
             fill
+            unoptimized={true}
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="object-cover transition-transform duration-300 group-hover:scale-105"
           />
@@ -58,7 +61,9 @@ export default function ProductCard({ product }: ProductCardProps) {
           >
             {CATEGORY_LABELS[product.category]}
           </span>
-          <span className={`whitespace-nowrap text-[11px] font-medium ${STOCK_COLORS[product.stockStatus]}`}>
+          <span
+            className={`whitespace-nowrap text-[11px] font-medium ${STOCK_COLORS[product.stockStatus]}`}
+          >
             {STOCK_LABELS[product.stockStatus]}
           </span>
         </div>
@@ -78,7 +83,9 @@ export default function ProductCard({ product }: ProductCardProps) {
           <p className="mb-3 text-xs text-text-muted">{product.platform}</p>
         )}
         {product.denomination && (
-          <p className="mb-3 text-xs text-text-muted">${product.denomination} USD</p>
+          <p className="mb-3 text-xs text-text-muted">
+            ${product.denomination} USD
+          </p>
         )}
         {product.duration && (
           <p className="mb-3 text-xs text-text-muted">{product.duration}</p>
@@ -98,10 +105,10 @@ export default function ProductCard({ product }: ProductCardProps) {
           </div>
           <button
             type="button"
-            disabled={product.stockStatus === 'out-of-stock'}
+            disabled={product.stockStatus === "out-of-stock"}
             className="btn-neon rounded px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider disabled:cursor-not-allowed disabled:opacity-40"
           >
-            {product.stockStatus === 'out-of-stock' ? 'Agotado' : 'Añadir'}
+            {product.stockStatus === "out-of-stock" ? "Agotado" : "Añadir"}
           </button>
         </div>
       </div>

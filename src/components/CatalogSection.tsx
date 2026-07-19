@@ -1,21 +1,28 @@
-'use client';
+"use client";
 
-import { useState, useMemo } from 'react';
-import type { ProductCategory } from '@/types';
-import { CATEGORIES, products } from '@/data/products';
-import CategoryFilter from './CategoryFilter';
-import ProductGrid from './ProductGrid';
+import { useMemo, useState } from "react";
+
+import { CATEGORIES, products } from "@/data/products";
+import type { ProductCategory } from "@/types";
+import CategoryFilter from "./CategoryFilter";
+import ProductGrid from "./ProductGrid";
 
 const FILTERS = [
-  { key: 'all' as const, label: 'Todos' },
-  ...CATEGORIES.map((c) => ({ key: c.key as ProductCategory | 'all', label: c.label })),
+  { key: "all" as const, label: "Todos" },
+  ...CATEGORIES.map((c) => ({
+    key: c.key as ProductCategory | "all",
+    label: c.label,
+  })),
 ];
 
 export default function CatalogSection() {
-  const [active, setActive] = useState<ProductCategory | 'all'>('all');
+  const [active, setActive] = useState<ProductCategory | "all">("all");
 
   const filtered = useMemo(
-    () => (active === 'all' ? products : products.filter((p) => p.category === active)),
+    () =>
+      active === "all"
+        ? products
+        : products.filter((p) => p.category === active),
     [active],
   );
 
@@ -36,7 +43,11 @@ export default function CatalogSection() {
 
       {/* Filter */}
       <div className="mb-8">
-        <CategoryFilter categories={FILTERS} active={active} onChange={setActive} />
+        <CategoryFilter
+          categories={FILTERS}
+          active={active}
+          onChange={setActive}
+        />
       </div>
 
       {/* Grid */}

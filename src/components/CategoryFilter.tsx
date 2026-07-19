@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { ProductCategory } from '@/types';
+import type { ProductCategory } from "@/types";
 
 interface CategoryFilterProps {
-  categories: { key: ProductCategory | 'all'; label: string }[];
-  active: ProductCategory | 'all';
-  onChange: (category: ProductCategory | 'all') => void;
+  categories: { key: ProductCategory | "all"; label: string }[];
+  active: ProductCategory | "all";
+  onChange: (category: ProductCategory | "all") => void;
 }
 
 export default function CategoryFilter({
@@ -24,8 +24,8 @@ export default function CategoryFilter({
             onClick={() => onChange(cat.key)}
             className={`rounded px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
               isActive
-                ? 'bg-neon-primary text-black shadow-[0_0_12px] shadow-neon-glow'
-                : 'border border-border-neon text-neon-primary hover:bg-neon-glow'
+                ? "bg-neon-primary text-black shadow-[0_0_12px] shadow-neon-glow"
+                : "border border-border-neon text-neon-primary hover:bg-neon-glow"
             }`}
           >
             {cat.label}
