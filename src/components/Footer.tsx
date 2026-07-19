@@ -1,7 +1,31 @@
+import Link from 'next/link';
+import { WhatsAppIcon } from '@/components/icons';
+
 export default function Footer() {
   return (
     <footer className="border-t border-border-subtle bg-bg-primary/95 px-6 py-12 backdrop-blur-sm md:px-12">
       <div className="mx-auto max-w-7xl">
+        {/* WhatsApp CTA */}
+        <div className="mb-12 flex flex-col items-center gap-4 rounded-lg border border-neon-green/30 bg-neon-green/[0.03] px-6 py-8 text-center sm:flex-row sm:justify-between sm:text-left">
+          <div>
+            <p className="mb-1 font-display text-base font-semibold text-text-primary">
+              ¿Listo para tu próxima compra?
+            </p>
+            <p className="font-body text-sm text-text-secondary">
+              Contáctanos por WhatsApp y recibe atención personalizada al instante
+            </p>
+          </div>
+          <Link
+            href="https://wa.me/584161234567"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded bg-neon-green px-6 py-3 font-body text-sm font-semibold text-black transition-all duration-200 hover:bg-neon-green/90 hover:shadow-[0_0_20px] hover:shadow-neon-green/50"
+          >
+            <WhatsAppIcon className="h-5 w-5" title="WhatsApp" />
+            Escribir por WhatsApp
+          </Link>
+        </div>
+
         {/* Grid */}
         <div className="mb-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
@@ -10,8 +34,8 @@ export default function Footer() {
               INMORTAL
             </span>
             <p className="mt-3 font-body text-xs leading-relaxed text-text-muted">
-              Marketplace de bienes digitales para la comunidad gamer.
-              Entrega inmediata por WhatsApp.
+              El marketplace definitivo para la era digital. Items exclusivos,
+              entrega rápida y seguridad garantizada en cada transacción.
             </p>
           </div>
 

@@ -1,5 +1,7 @@
 import type { Product, ProductCategory } from '@/types';
 
+const IMG = 'https://placehold.co/400x250/12141f/00f0ff';
+
 export const CATEGORIES: { key: ProductCategory; label: string }[] = [
   { key: 'game-items', label: 'Items de Juego' },
   { key: 'virtual-currency', label: 'Moneda Virtual' },
@@ -17,6 +19,7 @@ export const products: Product[] = [
     price: 24.99,
     originalPrice: 34.99,
     stockStatus: 'available',
+    image: `${IMG}?text=Dragon+Blade`,
     platform: 'PC',
   },
   {
@@ -26,6 +29,7 @@ export const products: Product[] = [
     category: 'game-items',
     price: 14.99,
     stockStatus: 'low',
+    image: `${IMG}?text=Phantom+Steed`,
     platform: 'PlayStation',
   },
   {
@@ -35,6 +39,7 @@ export const products: Product[] = [
     category: 'game-items',
     price: 34.99,
     stockStatus: 'available',
+    image: `${IMG}?text=Cosmic+Armor`,
     platform: 'Xbox',
   },
 
@@ -46,6 +51,7 @@ export const products: Product[] = [
     category: 'virtual-currency',
     price: 79.99,
     stockStatus: 'available',
+    image: `${IMG}?text=V-Bucks`,
   },
   {
     id: 'vc-002',
@@ -54,6 +60,7 @@ export const products: Product[] = [
     category: 'virtual-currency',
     price: 49.99,
     stockStatus: 'available',
+    image: `${IMG}?text=RP+6500`,
   },
   {
     id: 'vc-003',
@@ -62,6 +69,7 @@ export const products: Product[] = [
     category: 'virtual-currency',
     price: 39.99,
     stockStatus: 'low',
+    image: `${IMG}?text=COD+Points`,
   },
 
   /* ─── Gift Cards ─── */
@@ -72,6 +80,7 @@ export const products: Product[] = [
     category: 'gift-cards',
     price: 50.0,
     stockStatus: 'available',
+    image: `${IMG}?text=Steam+Card`,
     denomination: 50,
   },
   {
@@ -81,6 +90,7 @@ export const products: Product[] = [
     category: 'gift-cards',
     price: 25.0,
     stockStatus: 'available',
+    image: `${IMG}?text=PS+Card`,
     denomination: 25,
   },
   {
@@ -90,6 +100,7 @@ export const products: Product[] = [
     category: 'gift-cards',
     price: 100.0,
     stockStatus: 'out-of-stock',
+    image: `${IMG}?text=Xbox+Card`,
     denomination: 100,
   },
 
@@ -101,6 +112,7 @@ export const products: Product[] = [
     category: 'digital-services',
     price: 14.99,
     stockStatus: 'available',
+    image: `${IMG}?text=Game+Pass`,
     duration: '1 mes',
   },
   {
@@ -110,6 +122,7 @@ export const products: Product[] = [
     category: 'digital-services',
     price: 13.99,
     stockStatus: 'available',
+    image: `${IMG}?text=PS+Plus`,
     duration: '1 mes',
   },
   {
@@ -119,6 +132,7 @@ export const products: Product[] = [
     category: 'digital-services',
     price: 3.99,
     stockStatus: 'available',
+    image: `${IMG}?text=Switch+Online`,
     duration: '1 mes',
   },
 ];
