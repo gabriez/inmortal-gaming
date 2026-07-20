@@ -1,8 +1,8 @@
-interface ChevronDownIconProps extends React.SVGProps<SVGSVGElement> {
+interface ChevronRightIconProps extends React.SVGProps<SVGSVGElement> {
   title?: string;
 }
 
-export function ChevronDownIcon({ title, ...props }: ChevronDownIconProps) {
+export function ChevronRightIcon({ title, ...props }: ChevronRightIconProps) {
   return (
     <svg
       aria-hidden={title ? undefined : true}
@@ -17,7 +17,7 @@ export function ChevronDownIcon({ title, ...props }: ChevronDownIconProps) {
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
-        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+        d="M8.25 4.5l7.5 7.5-7.5 7.5"
       />
     </svg>
   );

@@ -7,11 +7,11 @@ import { CartIcon, CloseIcon, MenuIcon } from "@/components/icons";
 import type { NavLink } from "@/types";
 
 const NAV_LINKS: NavLink[] = [
-  { label: "Catálogo", href: "#catalogo" },
+  { label: "Catálogo", href: "/catalogo" },
   { label: "Ofertas", href: "#ofertas" },
 ];
 
-export default function Navbar() {
+export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (

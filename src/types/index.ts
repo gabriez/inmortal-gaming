@@ -34,3 +34,10 @@ export interface CartItem {
   productId: string;
   quantity: number;
 }
+
+export interface ProductDisplay extends Product {
+  /** Label visible en la card (ej. "Hardware", "Optics") */
+  displayCategory: string;
+  /** Color token del label */
+  categoryColor: "neon-purple" | "neon-pink" | "neon-green" | "neon-amber";
+}

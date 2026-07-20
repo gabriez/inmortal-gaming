@@ -1,12 +1,12 @@
 "use client";
 
 import { ChevronDownIcon } from "@/components/icons";
-import NodeBackground from "./NodeBackground";
+import { NodeBackground } from "./NodeBackground";
 
 /* Deterministic heights to avoid hydration mismatch */
 const WAVEFORM_HEIGHTS = [32, 48, 24, 64, 40, 56, 28, 44];
 
-export default function HeroSection() {
+export function HeroSection() {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
       {/* Animated neural node background */}

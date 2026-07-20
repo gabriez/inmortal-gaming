@@ -66,7 +66,7 @@ function OfferCard({
   );
 }
 
-export default function OffersSection() {
+export function OffersSection() {
   return (
     <section id="ofertas" className="bg-bg-surface/50">
       <div className="mx-auto max-w-7xl px-6 py-24 md:px-12">

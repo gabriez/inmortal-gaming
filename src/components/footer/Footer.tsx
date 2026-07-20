@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { WhatsAppIcon } from "@/components/icons";
 
-export default function Footer() {
+export function Footer() {
   return (
     <footer className="border-t border-border-subtle bg-bg-primary/95 px-6 py-12 backdrop-blur-sm md:px-12">
       <div className="mx-auto max-w-7xl">

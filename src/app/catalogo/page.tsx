@@ -1,17 +1,13 @@
 import { Catalog } from "@/components/catalog/Catalog";
 import { Footer } from "@/components/footer/Footer";
-import { HeroSection } from "@/components/hero/HeroSection";
 import { Navbar } from "@/components/navbar/Navbar";
-import { OffersSection } from "@/components/offers/OffersSection";
 
-export default function Home() {
+export default function CatalogoPage() {
   return (
     <>
       <Navbar />
-      <main className="px-10">
-        <HeroSection />
+      <main className="px-10 pt-25">
         <Catalog />
-        <OffersSection />
       </main>
       <Footer />
     </>
