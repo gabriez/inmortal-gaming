@@ -1,7 +1,17 @@
+export { AnalyticsIcon } from "./AnalyticsIcon";
 export { CartIcon } from "./CartIcon";
 export { ChevronDownIcon } from "./ChevronDownIcon";
 export { ChevronLeftIcon } from "./ChevronLeftIcon";
 export { ChevronRightIcon } from "./ChevronRightIcon";
 export { CloseIcon } from "./CloseIcon";
+export { DashboardIcon } from "./DashboardIcon";
+export { DownloadIcon } from "./DownloadIcon";
+export { MemoryIcon } from "./MemoryIcon";
 export { MenuIcon } from "./MenuIcon";
+export { OrdersIcon } from "./OrdersIcon";
+export { PendingActionsIcon } from "./PendingActionsIcon";
+export { ProductsIcon } from "./ProductsIcon";
+export { SearchIcon } from "./SearchIcon";
+export { UsersIcon } from "./UsersIcon";
+export { WalletIcon } from "./WalletIcon";
 export { WhatsAppIcon } from "./WhatsAppIcon";

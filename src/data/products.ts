@@ -28,8 +28,7 @@ export const PRODUCTS: ProductDisplay[] = [
   {
     id: "viper-synapse-mouse",
     name: "Viper Synapse Mouse",
-    description:
-      "Zero-latency pointer interface with carbon fiber chassis.",
+    description: "Zero-latency pointer interface with carbon fiber chassis.",
     category: "game-items",
     displayCategory: "Hardware",
     categoryColor: "neon-purple",

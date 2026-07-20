@@ -21,10 +21,7 @@ const STOCK_STYLES: Record<
   },
 };
 
-const CATEGORY_COLORS: Record<
-  ProductDisplay["categoryColor"],
-  string
-> = {
+const CATEGORY_COLORS: Record<ProductDisplay["categoryColor"], string> = {
   "neon-purple": "text-neon-purple",
   "neon-pink": "text-neon-pink",
   "neon-green": "text-neon-green",
