@@ -36,6 +36,15 @@ yarn-error.log*
 # vercel
 .vercel
 
+# tooling artifacts
+.gemini/
+.kiro/
+.pi/
+.qoder/
+.rovodev/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.atl
