@@ -1,5 +1,6 @@
 export { AnalyticsIcon } from "./AnalyticsIcon";
 export { CartIcon } from "./CartIcon";
+export { DeleteIcon } from "./DeleteIcon";
 export { ChevronDownIcon } from "./ChevronDownIcon";
 export { ChevronLeftIcon } from "./ChevronLeftIcon";
 export { ChevronRightIcon } from "./ChevronRightIcon";
@@ -8,8 +9,10 @@ export { DashboardIcon } from "./DashboardIcon";
 export { DownloadIcon } from "./DownloadIcon";
 export { MemoryIcon } from "./MemoryIcon";
 export { MenuIcon } from "./MenuIcon";
+export { MinusIcon } from "./MinusIcon";
 export { OrdersIcon } from "./OrdersIcon";
 export { PendingActionsIcon } from "./PendingActionsIcon";
+export { PlusIcon } from "./PlusIcon";
 export { ProductsIcon } from "./ProductsIcon";
 export { SearchIcon } from "./SearchIcon";
 export { UsersIcon } from "./UsersIcon";

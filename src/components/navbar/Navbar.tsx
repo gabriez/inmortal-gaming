@@ -42,16 +42,16 @@ export function Navbar() {
         {/* Right side */}
         <div className="flex items-center gap-4">
           {/* Cart */}
-          <button
+          <Link
+            href="/cart"
             className="relative p-2 text-text-secondary transition-colors hover:text-neon-primary"
             aria-label="Carrito"
-            type="button"
           >
             <CartIcon className="h-5 w-5" />
             <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-neon-primary text-[10px] font-bold text-black">
               3
             </span>
-          </button>
+          </Link>
 
           {/* Login */}
           <Link
