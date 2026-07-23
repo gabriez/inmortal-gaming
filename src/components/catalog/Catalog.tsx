@@ -1,3 +1,5 @@
+"use client";
+
 import { PRODUCTS } from "@/data/products";
 import { CatalogPagination } from "./CatalogPagination";
 import { CatalogToolbar } from "./CatalogToolbar";

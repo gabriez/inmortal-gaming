@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { CartIcon } from "@/components/icons";
 import type { ProductDisplay } from "@/types";
@@ -37,7 +38,10 @@ export function ProductCard({ product }: ProductCardProps) {
   const categoryColor = CATEGORY_COLORS[product.categoryColor];
 
   return (
-    <article className="group flex cursor-pointer flex-col overflow-hidden rounded-lg border-l border-neon-primary bg-bg-surface shadow-[inset_0_2px_10px_rgba(0,0,0,0.5)] transition-all duration-200 hover:-translate-y-0.5">
+    <Link
+      href={`/catalogo/${product.id}`}
+      className="group flex cursor-pointer flex-col overflow-hidden rounded-lg border-l border-neon-primary bg-bg-surface shadow-[inset_0_2px_10px_rgba(0,0,0,0.5)] transition-all duration-200 hover:-translate-y-0.5"
+    >
       {/* Image */}
       <div className="relative h-48 w-full overflow-hidden bg-bg-surface-hover">
         {/* Cyan overlay that fades on hover */}
@@ -89,6 +93,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
           <button
             type="button"
+            onClick={(e) => e.preventDefault()}
             className="rounded-sm border border-neon-primary p-2 text-neon-primary transition-colors hover:bg-neon-primary/10"
             aria-label={`Add ${product.name} to cart`}
           >
@@ -96,6 +101,6 @@ export function ProductCard({ product }: ProductCardProps) {
           </button>
         </div>
       </div>
-    </article>
+    </Link>
   );
 }
