@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const MOCK_IMAGE =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuAanlW-VmCfBLAZN5yaOD-iQILxY29NHzZCANXBABAY0ca8FkkpjIVZAJ6evAzFOswm0lOeH9CUzoWUO23NSDXvyN4_k_L7GvNKtbStfBnA7hCgcAVHyokfSzP3jiAJhjNAzMRRc20uKpmDyKu6goPiFRWSTLLSpX43NKvFinADAcj7HOdAjr8qKj9OkaV9uXscmoYfZgrNFF9A-x7kHcyyVWZQUJSyVd7UeEyi4t7YWOCyq_55aho0";
 
@@ -9,9 +11,11 @@ export function ProductImage() {
         {/* Cyan overlay */}
         <div className="pointer-events-none absolute inset-0 z-10 bg-neon-primary/5 mix-blend-overlay" />
 
-        <img
+        <Image
           src={MOCK_IMAGE}
           alt="CyberDeck Pro V9 - futuristic cyberpunk gaming hardware"
+          width={600}
+          height={600}
           className="aspect-square w-full object-cover opacity-90 transition-opacity duration-300 group-hover:opacity-100"
         />
 
