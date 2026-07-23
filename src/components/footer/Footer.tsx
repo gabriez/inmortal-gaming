@@ -4,7 +4,7 @@ import { WhatsAppIcon } from "@/components/icons";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border-subtle bg-bg-primary/95 px-6 py-12 backdrop-blur-sm md:px-12">
+    <footer className="border-t border-text-muted/20 bg-bg-primary/95 px-6 py-12 backdrop-blur-sm md:px-12">
       <div className="mx-auto max-w-7xl">
         {/* WhatsApp CTA */}
         <div className="mb-12 flex flex-col items-center gap-4 rounded-lg border border-neon-green/30 bg-neon-green/[0.03] px-6 py-8 text-center sm:flex-row sm:justify-between sm:text-left">
@@ -106,7 +106,7 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-border-subtle pt-6 text-center">
+        <div className="border-t border-text-muted/20 pt-6 text-center">
           <p className="font-body text-[11px] text-text-muted">
             &copy; {new Date().getFullYear()} Inmortal Gaming. Todos los
             derechos reservados.
